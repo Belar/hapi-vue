@@ -64,8 +64,7 @@ module.exports = {
   devtool: '#source-map'
 }
 
-module.exports.devtool = '#source-map'
-  // http://vuejs.github.io/vue-loader/workflow/production.html
+// http://vuejs.github.io/vue-loader/workflow/production.html
 module.exports.plugins = (module.exports.plugins || []).concat([
   new webpack.DefinePlugin({
     'process.env': {
