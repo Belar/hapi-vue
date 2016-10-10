@@ -46,7 +46,7 @@ module.exports = {
   vue: {
     loaders: {
       css: ExtractTextPlugin.extract(['css']),
-      scss: ExtractTextPlugin.extract(['css', 'sass'])
+      sass: ExtractTextPlugin.extract(['css', 'sass'])
     }
   },
   plugins: [

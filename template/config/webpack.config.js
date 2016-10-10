@@ -65,7 +65,7 @@ module.exports = {
   {{/lint}}
   vue: {
     loaders: {
-      'scss': 'vue-style!css!sass'
+      'sass': 'vue-style!css!sass'
     }
   },
   plugins: [
