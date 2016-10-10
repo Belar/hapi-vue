@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="sass">
 body {
   font-family: Open Sans, sans-serif;
 }
