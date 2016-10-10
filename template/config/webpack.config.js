@@ -80,5 +80,5 @@ module.exports = {
       inject: true
     })
   ],
-  devtool: '#eval-source-map'
+  devtool: '#eval'
 }
