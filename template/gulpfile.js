@@ -39,7 +39,7 @@ gulp.task('browser-sync', ['nodemon'], function () {
   browserSync.init({
 
     // Watch the following files, inject changes or refresh
-    files: ['public/js/**/*.*', 'public/css/**/*.*', 'public/images/**/*.*'],
+    files: ['public/assets/js/**/*.*', 'public/assets/css/**/*.*', 'public/assets/images/**/*.*'],
 
     // Proxy our Hapi app
     proxy: 'http://localhost:3000',

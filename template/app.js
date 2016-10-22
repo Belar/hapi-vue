@@ -45,7 +45,7 @@ server.register([Inert], function (err) {
 
   server.route({
     method: 'GET',
-    path: '/{filename*}',
+    path: '/assets/{filepath*}',
     config: {
       auth: false,
       cache: {
@@ -55,7 +55,7 @@ server.register([Inert], function (err) {
     },
     handler: {
       directory: {
-        path: __dirname + '/public',
+        path: __dirname + '/public/assets/',
         listing: false,
         index: false
       }
