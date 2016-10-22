@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../public/'),
     publicPath: '/',
-    filename: 'build.js'
+    filename: 'build/build.js'
   },
   resolve: {
     extensions: ['', '.js', '.vue'],
@@ -59,7 +59,7 @@ module.exports = {
       template: path.resolve(__dirname, '../build/index_dev.html'),
       inject: true
     }),
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('build/style.css')
   ],
   devtool: '#source-map'
 }
