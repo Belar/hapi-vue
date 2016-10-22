@@ -94,7 +94,7 @@ server.register([Inert], function (err) {
 
   server.route({
     method: 'GET',
-    path: '/',
+    path: '/{path*}',
     handler: function (request, reply) {
       reply.file('./public/index.html');
     }
