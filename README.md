@@ -26,6 +26,8 @@ $ vue init belar/hapi-vue <project_name>
 $ cd <project_name>
 ```
 
+For tips and guides regarding integration of additional mechanisms (e.g vue-router), visit [Hapi Vue wiki](https://github.com/Belar/hapi-vue/wiki).
+
 ## Dev Setup
 
 ``` bash
