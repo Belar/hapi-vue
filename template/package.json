@@ -10,6 +10,9 @@
     {{#unit}}
     "unit": "karma start test/unit/karma.conf.js",
     {{/unit}}
+    {{#unitApi}}
+    "unit-api": "lab test/api/spec/ -C -v -c -r console -o stdout -r html -o test/api/coverage/index.html --coverage-exclude .eslintrc.js",
+    {{/unitApi}}
     "build": "webpack --progress --hide-modules --config config/production.webpack.config.js"
   },
   "dependencies": {
@@ -51,6 +54,9 @@
     "eslint-plugin-promise": "^3.3.0",
     "eslint-plugin-standard": "^2.0.1",
     {{/lint}}
+    {{#if_or unit unitApi}}
+    "chai": "^3.5.0",
+    {{/if_or}}
     {{#unit}}
     "karma": "^1.3.0",
     "karma-coverage": "^1.1.1",
@@ -67,10 +73,12 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "sinon-stub-promise": "^3.0.1",
-    "chai": "^3.5.0",
     "isparta-loader": "^2.0.0",
     "inject-loader": "^2.0.1",
     {{/unit}}
+    {{#unitApi}}
+    "lab": "^11.2.1",
+    {{/unitApi}}
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.10.0",

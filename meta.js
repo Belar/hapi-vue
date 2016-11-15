@@ -28,6 +28,11 @@ module.exports = {
       "type": "confirm",
       "message": "Include unit tests (Karma + Mocha + Sinon + Chai)?",
       "default": false
+    },
+    "unitApi": {
+      "type": "confirm",
+      "message": "Include dedicated, Hapi unit test utility (Lab + Chai)?",
+      "default": false
     }
   },
   "helpers": {
@@ -40,8 +45,9 @@ module.exports = {
   },
   "filters": {
     ".eslintrc.js": "lint",
-    "test": "unit",
-    "test/unit/**/*": "unit"
+    "test": "unit || unitApi",
+    "test/unit/**/*": "unit",
+    "test/api/**/*": "unitApi"
   },
   "completeMessage": "To run dev version:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\n"
 }

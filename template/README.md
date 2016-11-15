@@ -25,6 +25,11 @@ npm install
 npm run unit
 {{/unit}}
 
+{{#unitApi}}
+# run api unit tests
+npm run unit-api
+{{/unitApi}}
+
 # serve with hot reload at localhost:3000 (with proxy at localhost:4000)
 npm run dev
 ```
