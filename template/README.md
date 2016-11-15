@@ -30,7 +30,7 @@ npm run unit
 npm run unit-api
 {{/unitApi}}
 
-# serve with hot reload at localhost:3000 (with proxy at localhost:4000)
+# serve with hot reload at localhost:4000 (proxy from localhost:3000)
 npm run dev
 ```
 
