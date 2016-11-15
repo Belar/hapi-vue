@@ -30,6 +30,14 @@ module.exports = {
       "default": false
     }
   },
+  "helpers": {
+    "if_or": function (a, b, opts) {
+      if (a || b) {
+        return opts.fn(this)
+      }
+      return opts.inverse(this)
+    }
+  },
   "filters": {
     ".eslintrc.js": "lint",
     "test": "unit",
