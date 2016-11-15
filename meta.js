@@ -1,4 +1,4 @@
-{
+module.exports = {
   "schema": {
     "name": {
       "type": "string",
@@ -21,11 +21,13 @@
     },
     "lint": {
       "type": "confirm",
-      "message": "Include code linter (ESlint)?"
+      "message": "Include code linter (ESlint)?",
+      "default": true
     },
     "unit": {
       "type": "confirm",
-      "message": "Include unit tests (Karma + Mocha + Sinon + Chai)?"
+      "message": "Include unit tests (Karma + Mocha + Sinon + Chai)?",
+      "default": false
     }
   },
   "filters": {
