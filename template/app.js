@@ -8,8 +8,8 @@ server.connection({
   port: 3000
 });
 
-// Register webpack HMR, only for non-production environments
-if (process.env.NODE_ENV !== 'production') {
+// Register webpack HMR, fallback to development environment
+if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
 
   const WebpackConfig = require('./config/webpack.config.js'); // Webpack config
   const HapiWebpackDevMiddleware = require('hapi-webpack-dev-middleware');
