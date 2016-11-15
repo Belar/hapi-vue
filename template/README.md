@@ -20,8 +20,10 @@
 # install dependencies
 npm install
 
+{{#unit}}
 # run unit tests
 npm run unit
+{{/unit}}
 
 # serve with hot reload at localhost:3000 (with proxy at localhost:4000)
 npm run dev
