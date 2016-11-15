@@ -28,6 +28,8 @@ $ cd <project_name>
 
 For tips and guides regarding integration of additional mechanisms (e.g vue-router), visit [Hapi Vue wiki](https://github.com/Belar/hapi-vue/wiki).
 
+NOTE: If you decide to run api (Hapi) unit tests using Mocha, remember about proper NODE_ENV (test), which with Lab is being set automatically.
+
 ## Dev Setup
 
 ``` bash
@@ -36,6 +38,9 @@ npm install
 
 # run unit tests
 npm run unit
+
+# run api unit tests
+npm run unit-api
 
 # serve with hot reload at localhost:4000 (proxy from localhost:3000)
 npm run dev
