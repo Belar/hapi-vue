@@ -16,7 +16,7 @@ module.exports = {
     alias: {
       'client': path.resolve(__dirname, '../client'),
       'components': path.resolve(__dirname, '../clients/components'),
-      'vue': 'vue/dist/vue'
+      'vue$': 'vue/dist/vue.common.js'
     }
   },
   resolveLoader: {
