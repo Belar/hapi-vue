@@ -50,7 +50,16 @@ module.exports = {
     }
   },
   plugins: [
-    // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
@@ -63,18 +72,3 @@ module.exports = {
   ],
   devtool: '#source-map'
 }
-
-// http://vuejs.github.io/vue-loader/workflow/production.html
-module.exports.plugins = (module.exports.plugins || []).concat([
-  new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: '"production"'
-    }
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
-  }),
-  new webpack.optimize.OccurenceOrderPlugin()
-])
