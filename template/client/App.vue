@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data: function() {
     return {
@@ -21,7 +23,7 @@ export default {
   },
   methods: {
     helloCall: function() {
-      this.$http.get('/api/call').then((response) => {
+      axios.get('/api/call').then((response) => {
         this.api = response.data.message
       }, (response) => {
         this.error = response.data
