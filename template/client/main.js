@@ -2,9 +2,8 @@
 
 import Vue from 'vue'
 import App from './App.vue'
-import VueResource from 'vue-resource'
 
-Vue.use(VueResource) // Web requests, Vue plugin
+// Axios doesn't include Promise polyfill (e.g. 'es6-promise'), if you need one, here is a good place to initiate it
 
 new Vue({
   el: '#app',
