@@ -40,7 +40,7 @@ module.exports = {
       loader: 'vue-loader',
       options: {
         loaders: {
-          'sass': 'vue-style!css!sass'
+          'sass': 'vue-style-loader!css-loader!sass-loader'
         }
       }
     }, {
