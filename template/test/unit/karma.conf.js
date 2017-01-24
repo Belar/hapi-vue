@@ -11,26 +11,18 @@ var projectRoot = path.resolve(__dirname, '../../')
 
 var webpackConfig = merge(baseConfig, {
   // use inline sourcemap for karma-sourcemap-loader
-  devtool: '#inline-source-map',
-  vue: {
-    loaders: {
-      js: 'isparta'
-    }
-  }
+  devtool: '#inline-source-map'
 })
 
 // no need for app entry during tests
 delete webpackConfig.entry
 
-// make sure isparta loader is applied before eslint
-webpackConfig.module.preLoaders = webpackConfig.module.preLoaders || []
-webpackConfig.module.preLoaders.unshift({
+webpackConfig.module.loaders = webpackConfig.module.loaders || []
+webpackConfig.module.loaders.unshift({
   test: /\.js$/,
-  loader: 'isparta',
   include: path.resolve(projectRoot, 'client')
 })
 
-// only apply babel for test files when using isparta
 webpackConfig.module.loaders.some(function(loader, i) {
   if (loader.loader === 'babel') {
     loader.include = path.resolve(projectRoot, 'test/unit')
