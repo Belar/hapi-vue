@@ -58,7 +58,7 @@ module.exports = {
         warnings: false
       }
     }),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, '../public/index.html'),
