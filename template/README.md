@@ -52,4 +52,4 @@ Credits:
 [Hapi](http://hapijs.com/)  
 [Gulp](https://gulpjs.com/)  
 [BrowserSync](https://www.browsersync.io/)  
-[Webpack](https://webpack.github.io/)  
+[Webpack](https://webpack.js.org/)  
