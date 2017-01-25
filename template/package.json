@@ -20,7 +20,7 @@
     "babel-runtime": "^6.22.0",
     "hapi": "^16.1.0",
     "inert": "^4.1.0",
-    "vue": "^2.1.10",
+    "vue": "^2.1.10"
   },
   "devDependencies": {
     "browser-sync": "^2.18.6",
