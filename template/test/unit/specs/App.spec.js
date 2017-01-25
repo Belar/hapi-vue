@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import App from 'client/App'
-
-import VueResource from 'vue-resource'
-Vue.use(VueResource)
+import axios from 'axios'
 
 const appInstance = new Vue(App)
 
-describe('App.vue component', function() {
-  it('should set correct default data', function() {
+describe('App.vue component', function () {
+  it('should set correct default data', function () {
     expect(typeof App.data).to.be.equal('function')
     var defaultData = App.data()
     expect(defaultData.msg).to.be.equal('Welcome!')
@@ -15,21 +13,21 @@ describe('App.vue component', function() {
 
   let promiseCall
 
-  before(function() {
-    promiseCall = sinon.stub(Vue, 'http').returnsPromise()
+  before(function () {
+    promiseCall = sinon.stub(axios, 'get').returnsPromise()
   })
 
-  after(function() {
-    Vue.http.restore()
+  after(function () {
+    axios.get.restore()
   })
 
-  it('should contain proper methods', function(done) {
+  it('should contain proper methods', function (done) {
     expect(typeof appInstance.helloCall).to.be.equal('function')
     done()
   })
 
   // https://github.com/substantial/sinon-stub-promise
-  it('helloCall should set proper data from AJAX response [success]', function(done) {
+  it('helloCall should set proper data from AJAX response [success]', function (done) {
     promiseCall.resolves({
       data: {
         message: 'Hello!'
@@ -40,7 +38,7 @@ describe('App.vue component', function() {
     done()
   })
 
-  it('helloCall should set proper data from AJAX response [fail]', function(done) {
+  it('helloCall should set proper data from AJAX response [fail]', function (done) {
     promiseCall.rejects({
       data: {
         'statusCode': 400,

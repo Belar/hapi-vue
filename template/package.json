@@ -16,11 +16,11 @@
     "build": "webpack --progress --hide-modules --config config/production.webpack.config.js"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "babel-runtime": "^6.22.0",
     "hapi": "^16.1.0",
     "inert": "^4.1.0",
     "vue": "^2.1.10",
-    "vue-resource": "^1.0.3"
   },
   "devDependencies": {
     "browser-sync": "^2.18.6",
