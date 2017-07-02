@@ -1,5 +1,5 @@
 module.exports = {
-  "schema": {
+  "prompts": {
     "name": {
       "type": "string",
       "required": true,
@@ -28,6 +28,21 @@ module.exports = {
       "type": "confirm",
       "message": "Include unit tests (Karma + Mocha + Sinon + Chai)?",
       "default": false
+    },
+    "headlessBrowser": {
+      "when": "unit",
+      "type": "list",
+      "message": "Pick a browser",
+      "choices": [
+        {
+          "name": "PhantomJS",
+          "value": "PhantomJS"
+        },
+        {
+          "name": "ChromeHeadless (Chrome >=59)",
+          "value": "ChromeHeadless"
+        }
+      ]
     },
     "unitApi": {
       "type": "confirm",
