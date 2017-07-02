@@ -1,5 +1,5 @@
 module.exports = {
-  "schema": {
+  "prompts": {
     "name": {
       "type": "string",
       "required": true,
