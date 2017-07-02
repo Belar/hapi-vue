@@ -3,7 +3,9 @@ const webpack = require('webpack')
 const projectRoot = path.resolve(__dirname, '../')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+{{#lint}}
 const EslintFriendlyFormatter = require('eslint-friendly-formatter')
+{{/lint}}
 
 module.exports = {
   entry: ['webpack-hot-middleware/client', './client/main.js'],
