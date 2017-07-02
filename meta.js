@@ -33,6 +33,21 @@ module.exports = {
       "type": "confirm",
       "message": "Include dedicated, Hapi unit test utility (Lab + Chai)?",
       "default": false
+    },
+    "headlessBrowser": {
+      "when": "unit",
+      "type": "list",
+      "message": "Pick a browser",
+      "choices": [
+        {
+          "name": "PhantomJS",
+          "value": "PhantomJS"
+        },
+        {
+          "name": "ChromeHeadless (Chrome >=59)",
+          "value": "ChromeHeadless"
+        }
+      ]
     }
   },
   "helpers": {
