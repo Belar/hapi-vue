@@ -29,11 +29,6 @@ module.exports = {
       "message": "Include unit tests (Karma + Mocha + Sinon + Chai)?",
       "default": false
     },
-    "unitApi": {
-      "type": "confirm",
-      "message": "Include dedicated, Hapi unit test utility (Lab + Chai)?",
-      "default": false
-    },
     "headlessBrowser": {
       "when": "unit",
       "type": "list",
@@ -48,6 +43,11 @@ module.exports = {
           "value": "ChromeHeadless"
         }
       ]
+    },
+    "unitApi": {
+      "type": "confirm",
+      "message": "Include dedicated, Hapi unit test utility (Lab + Chai)?",
+      "default": false
     }
   },
   "helpers": {
