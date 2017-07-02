@@ -5,5 +5,8 @@
   "globals": {
     "expect": true,
     "sinon": true
+  },
+  "rules": {
+    "no-unused-expressions": "off" // https://github.com/eslint/eslint/issues/2102
   }
 }
