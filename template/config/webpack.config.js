@@ -15,7 +15,7 @@ module.exports = {
     filename: 'build/build.js'
   },
   resolve: {
-    modules: [path.join(__dirname, '../node_modules')],
+    modules: [path.join(__dirname, '../node_modules'), 'node_modules'],
     extensions: ['.js', '.vue'],
     alias: {
       'client': path.resolve(__dirname, '../client'),
