@@ -18,9 +18,9 @@ gulp.task('nodemon', function (cb) {
 
       // Ensure only one call
       if (!called) {
+        called = true;
         return cb();
       }
-      called = true;
     })
     .on('restart', function onRestart() {
       // Reload connected browsers after a slight delay
