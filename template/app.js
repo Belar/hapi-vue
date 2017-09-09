@@ -11,31 +11,28 @@ server.connection({
 // Register webpack HMR, fallback to development environment
 if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
 
-  const WebpackConfig = require('./config/webpack.config.js'); // Webpack config
-  const HapiWebpackDevMiddleware = require('hapi-webpack-dev-middleware');
-  const HapiWebpackHotMiddleware = require('hapi-webpack-hot-middleware');
+    const WebpackConfig = require('./config/webpack.config.js'); // Webpack config
+    const HapiWebpackMiddleware = require('./server/plugins/HapiWebpackMiddleware');
 
-  server.register([{
-    register: HapiWebpackDevMiddleware,
-    options: {
-      config: WebpackConfig,
+    server.register({
+      register: HapiWebpackMiddleware,
       options: {
-        noInfo: true,
-        publicPath: WebpackConfig.output.publicPath,
-        stats: {
-          colors: true
+        config: WebpackConfig,
+        devOptions: {
+          noInfo: true,
+          publicPath: WebpackConfig.output.publicPath,
+          stats: {
+            colors: true
+          }
         }
       }
-    }
-  }, {
-    register: HapiWebpackHotMiddleware
-  }], function (err) {
-    if (err) {
-      throw err;
-    }
-  });
+    }, function (err) {
+      if (err) {
+        throw err;
+      }
+    });
 
-}
+  }
 
 server.register([Inert], function (err) {
 

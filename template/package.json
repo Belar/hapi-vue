@@ -89,6 +89,7 @@
     {{/unitApi}}
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.5.0",
+    "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^4.1.0",
     "extract-text-webpack-plugin": "^2.1.2"
