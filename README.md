@@ -48,6 +48,14 @@ npm run unit-api
 npm run dev
 ```
 
+### Hapi Webpack Middleware
+
+Hapi Vue uses Hapi plugin system for integration of Webpack middlewares [web-dev-middleware](https://github.com/webpack/webpack-dev-middleware) and [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware).
+
+Plugin accepts following options on registration:  
+**config** - Webpack configuration file, `./config/webpack.config.js` by default.  
+**devOptions** - Options for webpack-dev-middleware, as in the official documentation.  
+**hotOptions** - Options for webpack-hot-middleware, as in the official documentation.  
 ## Production Setup
 
 ``` bash
