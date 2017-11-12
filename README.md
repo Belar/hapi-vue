@@ -2,10 +2,6 @@
 
 > Development setup utilising Vue 2 (Webpack HMR + Vue loader) and Hapi (Nodemon) running with Gulp and BrowserSync. It includes CSS extraction (build only), linting (ESlint) and unit testing (Karma, Mocha, Chai, Sinon, Lab).
 
-For Vue 2 + Webpack 1 check [archive-webpack1 branch](https://github.com/Belar/hapi-vue/tree/archive-webpack1)  
-For Vue 1 check [Hapi Vue Simple](https://github.com/Belar/hapi-vue-simple) or [Hapi Vue Plus](https://github.com/Belar/hapi-vue-plus)
-
-
 ## Mini-doc
 
 **/build/** - Contains files needed for build and hot development  
