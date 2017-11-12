@@ -48,7 +48,7 @@ node app.js
 ```
 
 Credits:
-[Vue 2](https://vuejs.org/)  
+[Vue](https://vuejs.org/)  
 [Hapi](http://hapijs.com/)  
 [Gulp](https://gulpjs.com/)  
 [BrowserSync](https://www.browsersync.io/)  
