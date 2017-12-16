@@ -18,8 +18,8 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-runtime": "^6.23.0",
-    "hapi": "^16.4.3",
-    "inert": "^4.2.0",
+    "hapi": "^17.1.1",
+    "inert": "^5.0.1",
     "vue": "^2.3.4"
   },
   "devDependencies": {
@@ -83,7 +83,7 @@
     {{/if_eq}}
     {{/unit}}
     {{#unitApi}}
-    "lab": "^14.1.0",
+    "lab": "^15.1.2",
     {{/unitApi}}
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0",
