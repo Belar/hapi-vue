@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
-  data: function() {
+  data: function () {
     return {
       // note: changing this line won't causes changes
       // with hot-reload because the reloaded component
@@ -19,18 +19,18 @@ export default {
       msg: 'Welcome!',
       api: '',
       error: {}
-    }
+    };
   },
   methods: {
-    helloCall: function() {
+    helloCall: function () {
       axios.get('/api/call').then((response) => {
-        this.api = response.data.message
+        this.api = response.data.message;
       }, (response) => {
-        this.error = response.data
-      })
+        this.error = response.data;
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="sass">
