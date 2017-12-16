@@ -2,44 +2,38 @@
 
 const Hapi = require('hapi');
 const Inert = require('inert');
+const path = require('path');
 
-const server = new Hapi.Server();
-server.connection({
+const server = new Hapi.Server({
   port: 3000
 });
 
-// Register webpack HMR, fallback to development environment
-if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
-
-    const WebpackConfig = require('./config/webpack.config.js'); // Webpack config
-    const HapiWebpackMiddleware = require('./server/plugins/HapiWebpackMiddleware');
-
-    server.register({
-      register: HapiWebpackMiddleware,
-      options: {
-        config: WebpackConfig,
-        devOptions: {
-          noInfo: true,
-          publicPath: WebpackConfig.output.publicPath,
-          stats: {
-            colors: true
-          }
+async function initWebpackTools (middleware, config) {
+  await server.register({
+    plugin: middleware,
+    options: {
+      config: config,
+      devOptions: {
+        noInfo: true,
+        publicPath: config.output.publicPath,
+        stats: {
+          colors: true
         }
       }
-    }, function (err) {
-      if (err) {
-        throw err;
-      }
-    });
+    }
+  });
+}
 
-  }
+// Register webpack HMR, fallback to development environment
+if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
+  const WebpackConfig = require('./config/webpack.config.js'); // Webpack config
+  const HapiWebpackMiddleware = require('./server/plugins/HapiWebpackMiddleware');
+  initWebpackTools(HapiWebpackMiddleware, WebpackConfig);
+}
 
-server.register([Inert], function (err) {
-
-  if (err) {
-    throw err;
-  }
-
+server.register({
+  plugin: Inert
+}).then(() => {
   server.route({
     method: 'GET',
     path: '/assets/{filepath*}',
@@ -52,7 +46,7 @@ server.register([Inert], function (err) {
     },
     handler: {
       directory: {
-        path: __dirname + '/public/assets/',
+        path: path.join(__dirname, '/public/assets/'),
         listing: false,
         index: false
       }
@@ -71,7 +65,7 @@ server.register([Inert], function (err) {
     },
     handler: {
       directory: {
-        path: __dirname + '/public/build/',
+        path: path.join(__dirname, '/public/build/'),
         listing: false,
         index: false
       }
@@ -82,28 +76,26 @@ server.register([Inert], function (err) {
   server.route({
     method: 'GET',
     path: '/api/call',
-    handler: function (request, reply) {
-      reply({
+    handler: function (request, h) {
+      return {
         message: 'Hello!'
-      })
+      };
     }
   });
 
   server.route({
     method: 'GET',
     path: '/{path*}',
-    handler: function (request, reply) {
-      reply.file('./public/index.html');
+    handler: {
+      file: './public/index.html'
     }
   });
+
+  server.start();
 });
 
-server.start((err) => {
-
-  if (err) {
-    throw err;
-  }
-  console.log('Server running at:', server.info.uri);
+server.events.on('start', (route) => {
+  console.log('Server started');
 });
 
 module.exports = server;
