@@ -9,23 +9,20 @@ var before = lab.before;
 var beforeEach = lab.beforeEach;
 var expect = Chai.expect;
 
-var server = require("../../../app.js");
+var server = require('../../../app.js');
 
 describe('apiCall', function () {
-  it('should reply with "Hello!" messsage', function (done) {
+  it('should reply with "Hello!" messsage', async function () {
     var options = {
-      method: "GET",
-      url: "/api/call"
+      method: 'GET',
+      url: '/api/call'
     };
 
-    server.inject(options, function (response) {
-      var result = response.result;
+    var response = await server.inject(options);
 
-      expect(response.statusCode).to.be.equal(200);
-      expect(result).to.be.an('object');
-      expect(response.result.message).to.be.equal('Hello!');
-
-      done();
-    });
+    expect(response).to.be.an('object');
+    expect(response.statusCode).to.be.equal(200);
+    expect(response.result.message).to.be.equal('Hello!');
   });
 });
+
