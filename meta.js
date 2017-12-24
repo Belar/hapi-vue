@@ -41,6 +41,10 @@ module.exports = {
         {
           "name": "ChromeHeadless (Chrome >=59)",
           "value": "ChromeHeadless"
+        },
+        {
+          "name": "FirefoxHeadless (FF [Linux] >=55 [Win/Mac] >=56)",
+          "value": "FirefoxHeadless"
         }
       ]
     },
