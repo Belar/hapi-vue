@@ -14,7 +14,7 @@ async function initWebpackTools (middleware, config) {
     options: {
       config: config,
       devOptions: {
-        noInfo: true,
+        logLevel: 'warn',
         publicPath: config.output.publicPath,
         stats: {
           colors: true
