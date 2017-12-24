@@ -42,6 +42,15 @@ module.exports = function(config) {
     {{#if_eq headlessBrowser "ChromeHeadless"}}
       browsers: ['ChromeHeadless'],
     {{/if_eq}}
+    {{#if_eq headlessBrowser "FirefoxHeadless"}}
+      browsers: ['FirefoxHeadless'],
+      customLaunchers: {
+        FirefoxHeadless: {
+          base: 'Firefox',
+          flags: [ '-headless' ]
+        }
+      },
+    {{/if_eq}}
     frameworks: ['mocha', 'sinon-stub-promise', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
