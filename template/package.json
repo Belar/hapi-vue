@@ -81,6 +81,9 @@
     {{#if_eq headlessBrowser "ChromeHeadless"}}
     "karma-chrome-launcher": "^2.2.0",
     {{/if_eq}}
+    {{#if_eq headlessBrowser "FirefoxHeadless"}}
+    "karma-firefox-launcher": "^1.1.0",
+    {{/if_eq}}
     {{/unit}}
     {{#unitApi}}
     "lab": "^15.1.2",

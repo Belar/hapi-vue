@@ -35,12 +35,16 @@ module.exports = {
       "message": "Pick a browser",
       "choices": [
         {
-          "name": "PhantomJS",
-          "value": "PhantomJS"
-        },
-        {
           "name": "ChromeHeadless (Chrome >=59)",
           "value": "ChromeHeadless"
+        },
+        {
+          "name": "FirefoxHeadless (FF [Linux] >=55 [Win/Mac] >=56)",
+          "value": "FirefoxHeadless"
+        },
+        {
+          "name": "PhantomJS",
+          "value": "PhantomJS"
         }
       ]
     },
