@@ -42,6 +42,9 @@ module.exports = function(config) {
     {{#if_eq headlessBrowser "ChromeHeadless"}}
       browsers: ['ChromeHeadless'],
     {{/if_eq}}
+    {{#if_eq headlessBrowser "ChromiumHeadless"}}
+      browsers: ['ChromiumHeadless'],
+    {{/if_eq}}
     {{#if_eq headlessBrowser "FirefoxHeadless"}}
       browsers: ['FirefoxHeadless'],
       customLaunchers: {

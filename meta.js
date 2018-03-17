@@ -39,6 +39,10 @@ module.exports = {
           "value": "ChromeHeadless"
         },
         {
+          "name": "ChromiumHeadless (Chromium >=59)",
+          "value": "ChromiumHeadless"
+        },
+        {
           "name": "FirefoxHeadless (FF [Linux] >=55 [Win/Mac] >=56)",
           "value": "FirefoxHeadless"
         },
@@ -57,6 +61,12 @@ module.exports = {
   "helpers": {
     "if_or": function (a, b, opts) {
       if (a || b) {
+        return opts.fn(this)
+      }
+      return opts.inverse(this)
+    },
+    "if_eq_or": function (option, a, b, opts) {
+      if (option === a || option === b) {
         return opts.fn(this)
       }
       return opts.inverse(this)
