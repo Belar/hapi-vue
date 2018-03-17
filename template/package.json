@@ -45,12 +45,12 @@
     "sass-loader": "^6.0.6",
     {{#lint}}
     "eslint": "^4.1.1",
-    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.8.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-html": "^4.0.1",
     "eslint-plugin-import": "^2.6.1",
-    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     {{/lint}}
