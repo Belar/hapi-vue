@@ -8,6 +8,7 @@ const EslintFriendlyFormatter = require('eslint-friendly-formatter')
 {{/lint}}
 
 module.exports = {
+  mode: 'development',
   entry: ['webpack-hot-middleware/client', './client/main.js'],
   output: {
     path: path.resolve(__dirname, '../public/'),

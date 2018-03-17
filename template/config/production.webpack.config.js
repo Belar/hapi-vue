@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
+  mode: 'production',
   entry: ['./client/main.js'],
   output: {
     path: path.resolve(__dirname, '../public/'),
