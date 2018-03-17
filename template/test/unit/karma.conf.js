@@ -17,13 +17,13 @@ var webpackConfig = merge(baseConfig, {
 // no need for app entry during tests
 delete webpackConfig.entry
 
-webpackConfig.module.loaders = webpackConfig.module.loaders || []
-webpackConfig.module.loaders.unshift({
+webpackConfig.module.rules = webpackConfig.module.rules || []
+webpackConfig.module.rules.unshift({
   test: /\.js$/,
   include: path.resolve(projectRoot, 'client')
 })
 
-webpackConfig.module.loaders.some(function(loader, i) {
+webpackConfig.module.rules.some(function(loader, i) {
   if (loader.loader === 'babel') {
     loader.include = path.resolve(projectRoot, 'test/unit')
     return true
