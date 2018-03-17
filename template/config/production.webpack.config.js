@@ -48,23 +48,13 @@ module.exports = {
     }]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
+      sourceMap: true
     }),
-    new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, '../public/index.html'),
-      template: path.resolve(__dirname, '../build/index_dev.html'),
-      inject: true
+      template: path.resolve(__dirname, '../build/index_dev.html')
     }),
     new ExtractTextPlugin('build/style.css')
   ],
